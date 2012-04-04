@@ -12,7 +12,7 @@ action.performWithContext = function(context, outError) {
 	// Grab our item and create our inserted text
 	var item = context.itemizer.smallestItemContainingCharacterRange(range);
 	var br = context.textPreferences.lineEndingString;
-	var insert = br + br + context.substringWithRange(item.range);
+	var insert = br + context.substringWithRange(item.range);
 	// Insert the new text
 	var recipe = new CETextRecipe();
 	recipe.insertAtIndex(item.range.location + item.range.length, insert);
